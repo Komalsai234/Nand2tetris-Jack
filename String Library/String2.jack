@@ -1,0 +1,232 @@
+// Implementation of String library in Jack
+
+class String2 {
+    field Array arr;
+    field int length;
+
+    constructor String2 new(String str) {
+        var int i;
+
+        let length = str.length();
+        let arr = Array.new(length);
+        let i = 0;
+        while (i < length) {
+            let arr[i] = str.charAt(i);
+            let i = i + 1;
+        }
+        return this;
+    }
+
+    method String get() {
+        var String str;
+        var int i;
+
+        let str = String.new(length);
+        let i = 0;
+        while (i < length) {
+            do str.appendChar(arr[i]);
+            let i = i + 1;
+        }
+        return str;
+    }
+
+    /** returns the character at j-th location of the string */
+    method int charAt(int j){
+      var int i, p;
+      let i = 0;
+
+      while(i < length){
+        let p = arr[j];
+        let i = i + 1;
+      }
+      return p;
+    }
+
+    /** Sets the j'th character of this string to be c */
+    method void setCharAt(int j, char c) {
+        var int i;
+
+        let i = 0;
+        while (i < length) {
+            if (i = j) {
+                let arr[i] = c;
+            }
+            let i = i + 1;
+        }
+        return;
+    }
+
+    /** Appends the character c to the end of this String. */
+    method void appendLastChar(char c) {
+        var Array array;
+        var int i;
+
+        let array = Array.new(length + 1);
+        let i = 0;
+        while (i < length) {
+            let array[i] = arr[i];
+            let i = i + 1;
+        }
+        let array[i] = c;
+        let arr = array;
+        let length = length + 1;
+        return;
+    }
+
+    /** Erases the last character from this String. */
+    method void eraseLastChar() {
+        var Array array;
+        var int i;
+
+        let array = Array.new(length - 1);
+        let i = 0;
+        while (i < (length - 1)) {
+            let array[i] = arr[i];
+            let i = i + 1;
+        }
+        let arr = array;
+        let length = length - 1;
+        return;
+    }
+
+    /** returns the integer value of this String until the first non-numeric character. */
+    method int intValue() {
+          var int i, result;
+          var boolean notfound, neg;
+
+          let neg = false;
+          let i = 0;
+          if (arr[0] = 45) {
+              let neg = true;
+              let i = 1;
+          }
+
+          let result = 0;
+          let notfound = true;
+          while (i < length) {
+              if ((arr[i] > 47 & arr[i] < 58) & notfound) {
+                  let result = result * 10 + (arr[i] - 48);
+              } else {
+                  let notfound = false;
+              }
+              let i = i + 1;
+          }
+
+          if (neg) {
+              let result = -result;
+          }
+          return result;
+      }
+
+      /** converts all the chracters of the string to upper case */
+      method void toUpperCase(){
+        var int i;
+        let i = 0;
+
+        while(i < length){
+          if((arr[i] > 96) & (arr[i] < 123)){
+            let arr[i] = (arr[i] - 32);
+          }
+          let i = i + 1;
+        }
+        return;
+      }
+
+      /** converts all the chracters of the string to lower case. */
+      method void toLowerCase(){
+        var int i;
+        let i = 0;
+
+        while(i < length){
+          if((arr[i] > 64) & (arr[i] < 91)){
+            let arr[i] = (arr[i] + 32);
+          }
+          let i = i + 1;
+        }
+        return;
+      }
+
+      /** checks if string starts with the specified character. */
+      method boolean startwith(char ch){
+        var int i;
+        let i = 0;
+
+        if(arr[0] = ch){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+
+      /** checks if string ends with the specified character. */
+      method boolean endwith(char ch){
+        var int i;
+        let i = 0;
+
+        if(arr[(length-1)] = ch){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+
+      /** returns the sub-string of the given index. */
+      method String subString(int start, int end){
+        var String str;
+        var int i;
+
+        let str = String.new(end - start);
+        let i = start;
+
+        while(i < end) {
+          do str.appendChar(arr[i]);
+          let i = i + 1;
+        }
+
+        return str;
+      }
+
+      /** returns how many times the given chracter occur in the given string. */
+      method int count(char c){
+        var int i;
+        var int k;
+
+        while(i < length){
+          if(arr[i] = c){
+            let k = k + 1;
+          }
+          let i = i + 1;
+        }
+        return k;
+      }
+
+      /** compares two string and return true if they are equal */
+      method boolean compareTo(String p){
+
+          var boolean isCompare;
+          var int array;
+          var int j;
+          var int i;
+
+          let j = p.length();
+          let array = Array.new(j);
+
+          while(i < j){
+            let array[i] = p.charAt(i);
+            let i = i + 1;
+          }
+
+          let i = 0;
+          while(i < p.length()){
+            if(arr[i] = array[i]){
+              let isCompare = true;
+            } else {
+              let isCompare = false;
+            }
+            let i = i + 1;
+          }
+          return isCompare;
+      }
+}
