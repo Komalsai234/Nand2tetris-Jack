@@ -206,7 +206,7 @@ class String2 {
       method boolean compareTo(String p){
 
           var boolean isCompare;
-          var int array;
+          var Array array;
           var int j;
           var int i;
 
