@@ -209,6 +209,10 @@ class String2 {
           var Array array;
           var int j;
           var int i;
+          
+          if(~(length = p.length())){
+          return false;
+          }
 
           let j = p.length();
           let array = Array.new(j);
