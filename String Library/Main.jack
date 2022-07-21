@@ -1,130 +1,139 @@
 class Main {
   function void main() {
-        var String2 s,s1,s2;
-        var String str,str1,str2;
+    var String2 s, s1;
+    var String str, str1;
+    var int c;
+    let str = "ABCDEFGH";
+    let s = String2.new(str);
 
-        let str = "ABCDEFGH";
-        let s = String2.new(str);
+    do Output.printString("The Given String is: ");
+    do Output.printString(str);
+    do Output.println();
+    do Output.println();
+    do Output.printString("The character we want to check is A ");
+    do Output.println();
+    do Output.println();
 
-        do Output.printString("The Given String is: ");
-        do Output.printString(str);
-        do Output.printString(str);
-        do Output.printString("The character at 2nd location is ");
-        do Output.printInt(s.charAt(2));
-
-        do Output.println();
-        do s.setCharAt(1, 65);
-        do Output.printString(s.get());
-        do Output.println();
-
-
-        do Output.printString("The Given String is: ");
-        do Output.printString(str);
-        do Output.println();
-        do Output.printString("The string after setting j-th chracter of string to c: ");
-        do s.setCharAt(2, 65);
-        do Output.printString(s.get());
-        do Output.println();
-
-        do Output.printString("The Given String is: ");
-        do Output.printString(str);
-        do Output.println();
-        do Output.printString("The string after appending given last cahracter: ");
-        do s.appendLastChar(69);
-        do Output.printString(s.get());
-        do Output.println();
-
-        let str1 = "-1296ABC";
-        let s1 = String2.new(str1);
-
-        do Output.printString("The Given String is: ");
-        do Output.printString(str1);
-        do Output.println();
-        do Output.printString("The Int value untill first non-numeric character: ");
-        do Output.printInt(s1.intValue());
-
-
-        do Output.printString("The Given String is: ");
-        do Output.printString(str);
-        do Output.println();
-        do Output.printString("The string earsing the last charcter: ");
-        do s.eraseLastChar();
-        do Output.printString(s.get());
-        do Output.println();
-
-        do Output.printString("The Given String is: ");
-        do Output.printString(str);
-        do Output.println();
-        do Output.printString("The character we want to check is A ");
-        do Output.println();
-        do Output.println();
-
-        if(s.startwith(65)){
-          do Output.printString("Yes! The given string starts with required character");
-        }
-        else {
-          do Output.printString("No! The given string starts with required character");
-        }
-
-
-        do Output.printString("The Given String is: ");
-        do Output.printString(str);
-        do Output.println();
-        do Output.printString("The character we want to check is A ");
-        do Output.println();
-        do Output.println();
-
-        if(s.endwith(65)){
-          do Output.printString("Yes! The given string starts with required character");
-        }
-        else {
-          do Output.printString("No! The given string starts with required character");
-        }
-
-        do Output.printString("The Given String is: ");
-        do Output.printString(str);
-        do Output.println();
-        do Output.printString("The required sub-string from index(1 to 4) is: ");
-        do Output.printString(s.subString(1,4));
-
-        do Output.printString("The Given String is: ");
-        do Output.printString(str);
-        do Output.println();
-        if(s.compareTo("ABCDEFG")){
-          do Output.printString("Yes! Both the Strings are equal");
-        }
-        else {
-          do Output.printString("No! Both the Strings are not equal");
-        }
-
-        do Output.printString("The Given String is: ");
-        do Output.printString(str);
-        do Output.println();
-        do Output.println();
-        do Output.printString("Number of times required character appears in string is: ");
-        do Output.printInt(s.count(65));
-
-        let str2 = "abcdefgh";
-        let s2 = String2.new(str2);
-
-        do Output.printString("The Given String is: ");
-        do Output.printString(str2);
-        do Output.println();
-        do Output.println();
-        do Output.printString("The String after changing to Uppercase: ");
-        do s.toUpperCase();
-        do Output.printString(s2.get());
-
-
-
-        do Output.printString("The Given String is: ");
-        do Output.printString(str);
-        do Output.println();
-        do Output.println();
-        do Output.printString("The String after changing to Lowercase: ");
-        do s.toLowerCase();
-        do Output.printString(s.get());
-
-        return;
+    if(s.startwith(65)){
+      do Output.printString("Yes! The given string starts with required character");
     }
+    else {
+      do Output.printString("No! The given string starts with required character");
+    }
+
+
+    do Output.println();
+    do Output.println();
+    do Output.printString("The character we want to check is A ");
+    do Output.println();
+    do Output.println();
+
+    if(s.endwith(65)){
+      do Output.printString("Yes! The given string ends with required character");
+    }
+    else {
+      do Output.printString("No! The given string not ends with required character");
+    }
+
+    do Output.println();
+    do Output.println();
+    do Output.printString("The required sub-string from index(1 to 4) is: ");
+    do Output.printString(s.subString(1,4));
+
+    do Output.println();
+    do Output.println();
+
+    if(s.compareTo("ABCDEFGH")){
+      do Output.printString("Yes! Both the Strings are equal");
+    }
+    else {
+      do Output.printString("No! Both the Strings are not equal");
+    }
+
+
+    do Output.println();
+    do Output.println();
+    do Output.printString("Number of times required character appears in string is: ");
+    do Output.printInt(s.count(65));
+
+    do Output.println();
+    do Output.println();
+    do Output.printString("The String after changing to Lowercase: ");
+    do s.toLowerCase();
+    do Output.printString(s.get());
+
+    let str1 = "abcdefgh";
+    let s1 = String2.new(str1);
+
+    do Output.println();
+    do Output.println();
+    do Output.printString("The String after changing to Uppercase: ");
+    do s.toUpperCase();
+    do Output.printString(s1.get());
+    
+    do Output.println();
+    do Output.println();
+    do Output.printString("The character we want to check is A ");
+    do Output.println();
+    do Output.println();
+
+    if(s.startwith(65)){
+      do Output.printString("Yes! The given string starts with required character");
+    }
+    else {
+      do Output.printString("No! The given string starts with required character");
+    }
+
+
+    do Output.println();
+    do Output.println();
+    do Output.printString("The character we want to check is A ");
+    do Output.println();
+    do Output.println();
+
+    if(s.endwith(65)){
+      do Output.printString("Yes! The given string ends with required character");
+    }
+    else {
+      do Output.printString("No! The given string not ends with required character");
+    }
+
+    do Output.println();
+    do Output.println();
+    do Output.printString("The required sub-string from index(1 to 4) is: ");
+    do Output.printString(s.subString(1,4));
+
+    do Output.println();
+    do Output.println();
+
+    if(s.compareTo("ABCDEFGH")){
+      do Output.printString("Yes! Both the Strings are equal");
+    }
+    else {
+      do Output.printString("No! Both the Strings are not equal");
+    }
+
+
+    do Output.println();
+    do Output.println();
+    do Output.printString("Number of times required character appears in string is: ");
+    do Output.printInt(s.count(65));
+
+    do Output.println();
+    do Output.println();
+    do Output.printString("The String after changing to Lowercase: ");
+    do s.toLowerCase();
+    do Output.printString(s.get());
+
+    let str1 = "abcdefgh";
+    let s1 = String2.new(str1);
+
+    do Output.println();
+    do Output.println();
+    do Output.printString("The String after changing to Uppercase: ");
+    do s.toUpperCase();
+    do Output.printString(s.get());
+
+       return;
+   }
 }
