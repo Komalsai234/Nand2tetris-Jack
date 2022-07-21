@@ -30,18 +30,6 @@ class String2 {
         return str;
     }
 
-    /** returns the character at j-th location of the string */
-    method int charAt(int j){
-      var int i, p;
-      let i = 0;
-
-      while(i < length){
-        let p = arr[j];
-        let i = i + 1;
-      }
-      return p;
-    }
-
     /** Sets the j'th character of this string to be c */
     method void setCharAt(int j, char c) {
         var int i;
